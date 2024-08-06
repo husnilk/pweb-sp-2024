@@ -2,37 +2,33 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("outgoing_types", {
+    await queryInterface.createTable("incoming_disps", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
-      },
-      lang: {
-        type: Sequelize.STRING,
-      },
-      status: {
+      incoming_doc_id: {
         type: Sequelize.INTEGER,
       },
-      generated: {
-        type: Sequelize.BOOLEAN,
+      user_id: {
+        type: Sequelize.INTEGER,
       },
-      template_file: {
-        type: Sequelize.STRING,
+      parent_id: {
+        type: Sequelize.INTEGER,
       },
-      created_at: {
+      createdAt: {
+        allowNull: false,
         type: Sequelize.DATE,
       },
-      updated_at: {
+      updatedAt: {
+        allowNull: false,
         type: Sequelize.DATE,
       },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("outgoing_types");
+    await queryInterface.dropTable("incoming_disps");
   },
 };

@@ -3,7 +3,7 @@ var router = express.Router();
 
 // GET /password/edit
 router.get("/edit", function (req, res, next) {
-  res.render("password/edit");
+  res.render("auth/password");
 });
 
 // POST /password/edit

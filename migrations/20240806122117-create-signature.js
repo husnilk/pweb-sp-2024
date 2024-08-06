@@ -2,45 +2,39 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("users", {
+    await queryInterface.createTable("signatures", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      email: {
+      outgoing_doc_id: {
+        type: Sequelize.INTEGER,
+      },
+      signature: {
+        type: Sequelize.INTEGER,
+      },
+      signed_date: {
+        type: Sequelize.DATE,
+      },
+      sign_code: {
         type: Sequelize.STRING,
       },
-      username: {
-        type: Sequelize.STRING,
+      status: {
+        type: Sequelize.INTEGER,
       },
-      password: {
-        type: Sequelize.STRING,
-      },
-      active: {
-        type: Sequelize.BOOLEAN,
-      },
-      type: {
-        type: Sequelize.STRING,
-      },
-      role: {
-        type: Sequelize.STRING,
-      },
-      avatar: {
-        type: Sequelize.STRING,
-      },
-      created_at: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("users");
+    await queryInterface.dropTable("signatures");
   },
 };

@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class OutgoingAttr extends Model {
+  class OutgoingListValue extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,18 +11,19 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  OutgoingAttr.init(
+  OutgoingListValue.init(
     {
-      outgoing_type_id: DataTypes.INTEGER,
-      name: DataTypes.STRING,
-      data_type: DataTypes.STRING,
+      outgoing_value_id: DataTypes.INTEGER,
+      student_id: DataTypes.INTEGER,
+      description: DataTypes.STRING,
     },
     {
       sequelize,
-      tableName: "outgoing_attrs",
-      modelName: "OutgoingAttr",
-      timestamps: false,
+      tableName: "outgoing_list_values",
+      modelName: "OutgoingListValue",
+      updatedAt: "updated_at",
+      createdAt: "created_at",
     }
   );
-  return OutgoingAttr;
+  return OutgoingListValue;
 };

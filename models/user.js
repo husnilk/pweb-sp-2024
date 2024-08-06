@@ -19,9 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       active: DataTypes.BOOLEAN,
       type: DataTypes.STRING,
       role: DataTypes.STRING,
+      avatar: DataTypes.STRING,
     },
     {
       sequelize,
+      tableName: "users",
       modelName: "User",
       updatedAt: "updated_at",
       createdAt: "created_at",

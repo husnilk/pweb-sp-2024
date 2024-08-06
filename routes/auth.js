@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const db = require("./models/index");
-const { where } = require("sequelize");
+var db = require("../models/index");
 
 /* GET /auth/login. */
 router.get("/login", function (req, res, next) {
