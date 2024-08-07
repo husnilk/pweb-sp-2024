@@ -1,11 +1,12 @@
 var express = require("express");
+const isAuthenticated = require("../middlewares/is_authenticated");
 var router = express.Router();
 
-router.get("/", function (req, res, next) {
+router.get("/", isAuthenticated, function (req, res, next) {
   res.render("profile/index");
 });
 
-router.get("/edit", function (req, res, next) {
+router.get("/edit", isAuthenticated, function (req, res, next) {
   res.render("profile/edit");
 });
 

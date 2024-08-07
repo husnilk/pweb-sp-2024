@@ -1,4 +1,5 @@
 var express = require("express");
+var brcypt = require("bcryptjs");
 var router = express.Router();
 var db = require("../models/index");
 
@@ -8,26 +9,42 @@ router.get("/login", function (req, res, next) {
 });
 
 // POST /auth/login
-router.post("/login", function (req, res, next) {
-  let username = req.body.username;
-  let password = req.body.password;
+router.post("/login", async function (req, res, next) {
+  //Get email and password from the request
+  let email = req.body.email;
+  let password = req.body.password; //plain text
 
-  let checkLogin = db.User.findAll({
+  let user = await db.User.findOne({
     where: {
-      username: username,
-      password: password,
+      email: email,
       active: 1,
     },
   });
-  if (checkLogin) {
-    res.redirect("/home");
+
+  if (user !== null) {
+    if (brcypt.compareSync(password, user.password)) {
+      req.session.username = user.username;
+      req.session.email = user.email;
+      req.session.type = user.type;
+      req.session.role = user.role;
+
+      res.cookie("sessionId", req.sessionID);
+
+      res.redirect("/home");
+    } else {
+      res.redirect("/auth/login");
+    }
+  } else {
+    res.redirect("/auth/login");
   }
-  res.redirect("/auth/login");
 });
 
 //POST /auth/logout
 router.post("/logout", function (req, res, next) {
-  res.redirect("/auth/login");
+  req.session.destroy(() => {
+    res.clearCookie("sessionId");
+    res.redirect("/auth/login");
+  });
 });
 
 module.exports = router;
