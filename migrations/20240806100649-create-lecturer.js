@@ -8,6 +8,10 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id",
+        },
       },
       name: {
         type: Sequelize.STRING,
@@ -15,8 +19,12 @@ module.exports = {
       nip: {
         type: Sequelize.STRING,
       },
-      functional: {
+      functional_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "functionals",
+          key: "id",
+        },
       },
       nidn: {
         type: Sequelize.STRING,

@@ -11,8 +11,15 @@ module.exports = {
       },
       outgoing_type_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "outgoing_types",
+          key: "id",
+        },
       },
       name: {
+        type: Sequelize.STRING,
+      },
+      label: {
         type: Sequelize.STRING,
       },
       data_type: {

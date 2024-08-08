@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.OutgoingListValue.belongsTo(models.OutgoingValue, {
+        foreignKey: "outgoing_value_id",
+      });
+      models.OutgoingListValue.belongsTo(models.Student, {
+        foreignKey: "student_id",
+      });
     }
   }
   OutgoingListValue.init(
