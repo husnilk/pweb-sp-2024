@@ -9,15 +9,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.OutgoingValue.belongsTo(models.OutgoingDoc, {
-        foreignKey: "outgoing_doc_id",
-      });
-      models.OutgoingValue.belongsTo(models.OutgoingAttr, {
-        foreignKey: "outgoing_attr_id",
-      });
-      models.OutgoingValue.belongsTo(models.OutgoingType, {
-        foreignKey: "outgoing_type_id",
-      });
+      // models.OutgoingValue.belongsTo(models.OutgoingDoc, {
+      //   foreignKey: "outgoing_doc_id",
+      // });
+      // models.OutgoingValue.belongsTo(models.OutgoingAttr, {
+      //   foreignKey: "outgoing_attr_id",
+      // });
+      // models.OutgoingValue.belongsTo(models.OutgoingType, {
+      //   foreignKey: "outgoing_type_id",
+      // });
     }
   }
   OutgoingValue.init(

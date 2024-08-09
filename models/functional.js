@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Functional.hasMany(models.Lecture, {
-        foreignKey: "functional_id",
-      });
+      // models.Functional.hasMany(models.Lecture, {
+      //   foreignKey: "functional_id",
+      // });
     }
   }
   Functional.init(

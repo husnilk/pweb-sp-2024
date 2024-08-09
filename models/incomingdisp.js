@@ -9,15 +9,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.IncomingDisp.belongsTo(models.IncomingDoc, {
-        foreignKey: "incoming_doc_id",
-      });
-      models.IncomingDisp.belongsTo(models.User, {
-        foreignKey: "user_id",
-      });
-      models.IncomingDisp.hasMany(models.IncomingDisp, {
-        foreignKey: "parent_id",
-      });
+      // models.IncomingDisp.belongsTo(models.IncomingDoc, {
+      //   foreignKey: "incoming_doc_id",
+      // });
+      // models.IncomingDisp.belongsTo(models.User, {
+      //   foreignKey: "user_id",
+      // });
+      // models.IncomingDisp.hasMany(models.IncomingDisp, {
+      //   foreignKey: "parent_id",
+      // });
     }
   }
   IncomingDisp.init(
