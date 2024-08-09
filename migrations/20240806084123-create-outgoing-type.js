@@ -17,9 +17,11 @@ module.exports = {
       },
       status: {
         type: Sequelize.INTEGER,
+        defaultValue: 1,
       },
       generated: {
         type: Sequelize.BOOLEAN,
+        defaultValue: true,
       },
       template_file: {
         type: Sequelize.STRING,

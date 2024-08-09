@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // models.IncomingDoc.hasMany(models.IncomingDisps, {
+      //   foreignKey: "incoming_doc_id",
+      // });
     }
   }
   IncomingDoc.init(

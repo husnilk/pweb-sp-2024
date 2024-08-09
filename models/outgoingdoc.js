@@ -9,6 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // models.OutgoingDoc.belongsTo(models.OutgoingType, {
+      //   foreignKey: "outgoing_type_id",
+      // });
+      // models.OutgoingDoc.hasMany(models.OutgoingListValue, {
+      //   foreignKey: "outgoing_value_id",
+      // });
+      // models.OutgoingDoc.hasMany(models.Signature, {
+      //   foreignKey: "outgoing_doc_id",
+      // });
+      // models.OutgoingDoc.belongs(models.User, {
+      //   foreignKey: "created_by",
+      // });
     }
   }
   OutgoingDoc.init(

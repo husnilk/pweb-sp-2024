@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // models.OutgoingType.hasMany(models.OutgoingAttr, {
+      //   foreignKey: "outgoing_type_id",
+      // });
+      // models.OutgoingType.hasMany(models.OutgoingDoc, {
+      //   foreignKey: "outgoing_type_id",
+      // });
     }
   }
   OutgoingType.init(

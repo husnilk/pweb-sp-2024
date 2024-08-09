@@ -29,6 +29,7 @@ module.exports = {
       },
       confidential: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +42,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("incoming_docs");
+    await queryInterface.dropTable("IncomingDocs");
   },
 };

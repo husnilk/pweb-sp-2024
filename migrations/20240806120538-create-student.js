@@ -8,6 +8,10 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id",
+        },
       },
       name: {
         type: Sequelize.STRING,
@@ -20,6 +24,10 @@ module.exports = {
       },
       advisor_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "lecturers",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,

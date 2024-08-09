@@ -11,12 +11,24 @@ module.exports = {
       },
       outgoing_doc_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "outgoing_docs",
+          key: "id",
+        },
       },
       outgoing_type_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "outgoing_attrs",
+          key: "outgoing_type_id",
+        },
       },
       outgoing_attr_id: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "outgoing_attrs",
+          key: "id",
+        },
       },
       value: {
         type: Sequelize.STRING,

@@ -26,6 +26,7 @@ module.exports = {
       },
       status: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
       },
       unsigned_file: {
         type: Sequelize.STRING,
@@ -38,6 +39,10 @@ module.exports = {
       },
       created_by: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
