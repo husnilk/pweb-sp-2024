@@ -12,6 +12,7 @@
     "debug": "~2.6.9",
     "docx2pdf-converter": "^1.1.0",
     "docxtemplater": "^3.49.2",
+    "exceljs": "^4.4.0",
     "express": "~4.16.1",
     "express-session": "^1.18.0",
     "hbs": "~4.0.4",
